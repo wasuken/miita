@@ -1,0 +1,7 @@
+<h2><%= @title %></h2>
+<ul>
+	<% @items.each do |item|%>
+		<p><%= item.title[0,30] %></p>
+		<p><%= item.markdown_body[0,30] %></p>
+	<% end %>
+</ul>

@@ -1,0 +1,5 @@
+<%= form_for(@item, url: {controller: :items, action: :create}) do |f| %>
+	<p>title<%= f.text_field :title %></p>
+	<p>body<%= f.text_area :markdown_body %></p>
+	<%= f.submit "submit" %>
+<% end %>
