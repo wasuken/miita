@@ -12,8 +12,11 @@ Rails.application.routes.draw do
     get "login", :to => "users/sessions#new"
     get "logout", :to => "users/sessions#destroy"
   end
+  root to: 'items#index'
+  get '/', to: 'items#index'
   get 'items/index'
   get 'items/new'
   post 'items/create'
+  get 'items/show/:id', to: 'items#show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
