@@ -1,10 +1,16 @@
 <h2><%= @title %></h2>
+<div class="header">
+  <%= link_to 'HOME', controller: 'items', action: 'index' %>
+  <%= link_to 'NEW', controller: 'items', action: 'new' %>
+  <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
+</div>
 <ul>
   <% @items.each do |item|%>
   <section class="card">
 	<div class="card-content">
 	  <h1 class="card-title"><%= item.title[0,30] %></h1>
 	  <p class="card-text"><%= item.plain_body.gsub(/<.*?>/, "")[0,30] %></p>
+	  <p class="card-text">username:<%= User.where("id = ?", item.user_id).first.nickname %></p>
 	</div>
 	<div class="card-link">
 	  <a href="/items/show/<%= item.id%>">read</a>

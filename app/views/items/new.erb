@@ -1,3 +1,8 @@
+<div class="header">
+  <%= link_to 'HOME', controller: 'items', action: 'index' %>
+  <%= link_to 'NEW', controller: 'items', action: 'new' %>
+  <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
+</div>
 <%= form_for(@item, url: {controller: :items, action: :create}) do |f| %>
 	<p>title<%= f.text_field :title %></p>
 	<p>body<%= f.text_area :markdown_body %></p>

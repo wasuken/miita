@@ -1,2 +1,7 @@
+<div class="header">
+  <%= link_to 'HOME', controller: 'items', action: 'index' %>
+  <%= link_to 'NEW', controller: 'items', action: 'new' %>
+  <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
+</div>
 <h1 class="card-title"><%= @item.title %></h1>
 <p class="card-text"><%= @item.plain_body.html_safe %></p>
