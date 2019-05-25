@@ -11,6 +11,10 @@
 	  <h1 class="card-title"><%= item.title[0,30] %></h1>
 	  <p class="card-text"><%= item.plain_body.gsub(/<.*?>/, "")[0,30] %></p>
 	  <p class="card-text">username:<%= User.where("id = ?", item.user_id).first.nickname %></p>
+	  <p class="card-text">
+		<button onClick="good_click(<%= current_user.id %>)">iine!:<%= Good.all.count %></button>
+		<button onClick="bad_click(<%= current_user.id %>)">yokunaine!:<%= Bad.all.count %></button>
+	  </p>
 	</div>
 	<div class="card-link">
 	  <a href="/items/show/<%= item.id%>">read</a>
@@ -19,3 +23,4 @@
   <% end %>
 </ul>
 <%= stylesheet_link_tag "items/index", media: "all" %>
+<%= hidden_field_tag "authenticity_token", form_authenticity_token %>

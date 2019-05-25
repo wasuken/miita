@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-
   devise_scope :user do
     get "user/:id", :to => "users/registrations#detail"
     get "signup", :to => "users/registrations#new"
@@ -13,5 +12,7 @@ Rails.application.routes.draw do
   get 'items/new'
   post 'items/create'
   get 'items/show/:id', to: 'items#show'
+  post 'goods/create', to: 'goods#create'
+  post 'bads/create', to: 'bads#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
