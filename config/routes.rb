@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post 'comments/create'
   devise_for :users
   devise_scope :user do
     get "user/:id", :to => "users/registrations#detail"

@@ -21,5 +21,7 @@ class ItemsController < ApplicationController
   def show
     @id = params[:id]
     @item = Item.find(@id)
+    @comment = Comment.new
+    @comments = Comment.where("user_id = ? and item_id = ?", current_user.id, @id)
   end
 end
