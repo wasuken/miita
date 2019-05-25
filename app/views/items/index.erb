@@ -12,8 +12,8 @@
 	  <p class="card-text"><%= item.plain_body.gsub(/<.*?>/, "")[0,30] %></p>
 	  <p class="card-text">username:<%= User.where("id = ?", item.user_id).first.nickname %></p>
 	  <p class="card-text">
-		<button onClick="good_click(<%= current_user.id %>)">iine!:<%= Good.all.count %></button>
-		<button onClick="bad_click(<%= current_user.id %>)">yokunaine!:<%= Bad.all.count %></button>
+		<button onClick="good_click(<%= current_user.id %>, <%= item.id%>)">iine!:<div id="goods-count"><%= Good.all.count %></div></button>
+		<button onClick="bad_click(<%= current_user.id %>, <%= item.id%>)">yokunaine!:<div id="bads-count"><%= Bad.all.count %></div></button>
 	  </p>
 	</div>
 	<div class="card-link">
