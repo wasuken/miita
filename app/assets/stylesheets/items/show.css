@@ -1,0 +1,32 @@
+.comments {
+	margin-top: 20px;
+	background: #f2f2f2;
+	border: 2px solid #50c1a5;
+}
+.comment-name .fn {
+	font-size: 16px;
+	font-weight: bold;
+	color: #666;
+}
+.comment-name .says {
+	font-size: 16px;
+	font-weight: bold;
+	color: #666;
+}
+.comment-date-edit {
+	font-size: 16px;
+	font-weight: bold;
+	color: #666;
+}
+.comments input[type="submit"] {
+	background: #50c1a5;
+	color: #fff;
+	border-radius: 3px;
+	padding: 10px;
+}
+@media only screen and (max-width: 413px) {
+	.comment-date-edit {
+		font-size: 12px;
+		display: block;
+	}
+}
