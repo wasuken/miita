@@ -12,8 +12,12 @@
 	  <p class="card-text"><%= item.plain_body.gsub(/<.*?>/, "")[0,30] %></p>
 	  <p class="card-text">username:<%= User.where("id = ?", item.user_id).first.nickname %></p>
 	  <p class="card-text">
-		<button onClick="good_click(<%= current_user.id %>, <%= item.id%>)">iine!:<div id="goods-count"><%= Good.where("item_id = ?", item.id).count %></div></button>
-		<button onClick="bad_click(<%= current_user.id %>, <%= item.id%>)">yokunaine!:<div id="bads-count"><%= Bad.where("item_id = ?", item.id).count %></div></button>
+		<a class="btn-circle-border-simple" href="#" onClick="good_click(<%= current_user.id %>, <%= item.id%>)">
+		  いいね:<span id="goods-count"><%= Good.where("item_id = ?", item.id).count %></span>
+		</a>
+		<a class="btn-circle-border-simple" href="#" onClick="bad_click(<%= current_user.id %>, <%= item.id%>)">
+		  よくないね:<span id="bads-count"><%= Bad.where("item_id = ?", item.id).count %></span>
+		</a>
 	  </p>
 	</div>
 	<div class="card-link">
